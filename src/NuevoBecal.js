@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ReactMapGL from "react-map-gl";
+import SidebarBecal from "./SidebarBecal";
 
 export default function Map() {
   const [viewport, setViewport] = useState({
@@ -12,6 +13,7 @@ export default function Map() {
   });
   return (
     <div>
+      <SidebarBecal />
       <ReactMapGL
         {...viewport}
         mapboxApiAccessToken="pk.eyJ1IjoiZWxpemFiZXRoZ2giLCJhIjoiY2twOHBkaHNvMDN1MjJvcDR6aGhpM2h2ayJ9.U3EK7VZc-urMFKxXy83cpQ"

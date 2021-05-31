@@ -1,0 +1,15 @@
+.container_button {
+  width: 280px;
+  height: 120px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.container_flora_fauna {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+}
