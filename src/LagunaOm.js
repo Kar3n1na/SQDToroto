@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ReactMapGL from "react-map-gl";
+import Cajon from "./Cajon";
 
 export default function Map() {
   const [viewport, setViewport] = useState({
@@ -20,6 +21,7 @@ export default function Map() {
           setViewport(viewport);
         }}
       ></ReactMapGL>
+      <Cajon />
     </div>
   );
 }
