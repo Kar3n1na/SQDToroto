@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import mapboxgl from "mapbox-gl/dist/mapbox-gl"
-import MapboxGeocoder from "mapbox-gl"
 
 mapboxgl.accessToken ="pk.eyJ1IjoiZWxpemFiZXRoZ2giLCJhIjoiY2twOHBkaHNvMDN1MjJvcDR6aGhpM2h2ayJ9.U3EK7VZc-urMFKxXy83cpQ";
+
+// const lagunaOm = "./Data/"
 
 export default function LagunaOm() {
   const [pageIsMounted, setPageIsMounted] = useState(false)
@@ -17,31 +18,7 @@ export default function LagunaOm() {
     })
     map.on("load", function () {
       // Add a data source containing GeoJSON data.
-      map.addSource("maine", {
-        type: "geojson",
-        data: {
-          type: "Feature",
-          geometry: {
-            type: "Polygon",
-            // These coordinates outline Maine.
-            coordinates: [
-              [
-                [-89.15095099588774, 18.701800462540451],
-                [-89.141583912131964, 18.69842832936191],
-                [-89.131144788298116, 18.695740791966902],
-                [-88.937578767594076, 18.675618955593979],
-                [-88.857868640716461, 18.665993374115509],
-                [-88.840983370433989, 18.664000194295809],
-                [-88.849427368309534, 18.595977367992109],
-                [-88.994963494932094, 18.616440955400648],
-                [-89.007085656287515, 18.551344205106229],
-                [-89.151041937400151, 18.569824572297399],
-                [-89.15095099588774, 18.701800462540451],
-              ],
-            ],
-          },
-        },
-      });
+      map.addSource("./Data/LagunaOm/ADP.geojson");
   
       // Add a new layer to visualize the polygon.
       map.addLayer({

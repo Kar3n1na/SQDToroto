@@ -3,7 +3,7 @@ import Map from "./Map";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import LagunaOm from "./LagunaOm";
-import NuevoBacal from "./NuevoBecal";
+import NuevoBecal from "./NuevoBecal";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 
@@ -20,7 +20,7 @@ function App() {
             <LagunaOm />
           </Route>
           <Route exact path="/nuevobecal">
-            <NuevoBacal />
+            <NuevoBecal />
           </Route>
         </Switch>
       </Router>
