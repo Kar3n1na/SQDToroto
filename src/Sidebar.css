@@ -1,15 +1,43 @@
 .container_button {
-    width: 280px;
-    height: 120px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-  ​
-  .container_flora_fauna {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    font-size: 14px;
-    font-weight: bold;
-  }
+  width: 280px;
+  height: 120px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.container_flora_fauna {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.container_sidebar_laguna {
+  width: 100vw;
+  height: 90vh;
+  display: flex;
+}
+
+.sidebar {
+  width: 20vw;
+  height: 90vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}
+
+.sidebar h3 {
+  font-family: "Oswald";
+}
+
+.container_mapa_laguna {
+  width: 85vw;
+  height: 90vh;
+}
+
+.container_becal {
+  display: flex;
+}

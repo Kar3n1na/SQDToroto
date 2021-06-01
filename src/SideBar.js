@@ -1,141 +1,51 @@
-import React, { useState } from "react";
+import React from "react";
 import { withStyles } from "@material-ui/core/styles";
 import "./Sidebar.css";
-import {
-  Button,
-  Drawer,
-  List,
-  ListItem,
-  ListItemText,
-} from "@material-ui/core";
+import { Button } from "@material-ui/core";
 
 const ButtonSidebar = withStyles({
   root: {
     boxShadow: "none",
     textTransform: "none",
-    width: "114px",
-    height: "22px",
+    width: "200px",
+    height: "40px",
     margin: "5px",
-    backgroundColor: " #1930DB",
-    color: "white",
+    backgroundColor: "#0ED956",
+    color: "#fff",
     fontStyle: "normal",
-    fontWeight: "400",
-    fontSize: "10px",
-    lineHeight: "19px",
+    fontWeight: "600",
+    fontSize: "12px",
+    lineHeight: "15px",
     borderRadius: "0",
     fontFamily: ["Oswald", "sans-serif", '"Apple Color Emoji"'].join(","),
     "&:hover": {
-      color: "#fff;",
-      backgroundColor: "#FFBC15",
+      color: "#fff",
+      backgroundColor: "#BA1863",
     },
     "&:active": {
       boxShadow: "none",
     },
     "&:focus": {
-      color: "#FFBC15",
-    },
-  },
-})(Button);
-
-const ButtonFlora = withStyles({
-  root: {
-    boxShadow: "none",
-    textTransform: "none",
-    width: "114px",
-    height: "35px",
-    margin: "5px",
-    border: "1px Solid #BA1863",
-    color: "#BA1863",
-    fontStyle: "normal",
-    fontWeight: "400",
-    fontSize: "10px",
-    lineHeight: "19px",
-    borderRadius: "0",
-    fontFamily: ["Oswald", "sans-serif", '"Apple Color Emoji"'].join(","),
-    "&:hover": {
-      color: "#BA1863",
-    },
-    "&:active": {
-      boxShadow: "none",
-    },
-  },
-})(Button);
-
-const ButtonFauna = withStyles({
-  root: {
-    boxShadow: "none",
-    textTransform: "none",
-    width: "114px",
-    height: "35px",
-    margin: "5px",
-    border: "1px Solid #FFBC15",
-    color: "#FFBC15",
-    fontStyle: "normal",
-    fontWeight: "400",
-    fontSize: "10px",
-    lineHeight: "19px",
-    borderRadius: "0",
-    fontFamily: ["Oswald", "sans-serif", '"Apple Color Emoji"'].join(","),
-    "&:hover": {
-      color: "#FFBC15",
-    },
-    "&:active": {
-      boxShadow: "none",
+      color: "#fff",
     },
   },
 })(Button);
 
 function Sidebar() {
-  const [open, setOpen] = useState(false);
-  const list = () => (
-    <div style={{ width: 280 }} onClick={() => setOpen(false)}>
-      <List>
-        {[
-          <img
-            src="https://cancunactivo.com.mx/wp-content/uploads/2019/11/laguna-om.jpg"
-            alt="LagunaOm"
-            width="250px"
-          />,
-          <div>
-            <ButtonSidebar variant="contained">Datos Generales</ButtonSidebar>
-            <ButtonSidebar variant="contained">Flora y Fauna</ButtonSidebar>
-            <ButtonSidebar variant="contained">Detalles</ButtonSidebar>
-            <ButtonSidebar variant="contained">Multimedia</ButtonSidebar>
-            <ButtonSidebar variant="contained">Ubicación</ButtonSidebar>
-            <ButtonSidebar variant="contained">Documentos</ButtonSidebar>
-          </div>,
-          <div className="container_flora_fauna">
-            <div>
-              FLORA
-              <ButtonFlora>Adelia Barbinervis</ButtonFlora>
-              <ButtonFlora>Euphorbiaceae</ButtonFlora>
-              <ButtonFlora>Tamandua Mexicana</ButtonFlora>
-              <ButtonFlora>Myrmecophagidae</ButtonFlora>
-              <ButtonFlora>Nombre</ButtonFlora>
-            </div>
-            <div>
-              FAUNA
-              <ButtonFauna>Nombre</ButtonFauna>
-              <ButtonFauna>Nombre</ButtonFauna>
-              <ButtonFauna>Nombre</ButtonFauna>
-              <ButtonFauna>Nombre</ButtonFauna>
-              <ButtonFauna>Nombre</ButtonFauna>
-            </div>
-          </div>,
-        ].map((label, index) => (
-          <ListItem button key={index}>
-            <ListItemText primary={label} />
-          </ListItem>
-        ))}
-      </List>
-    </div>
-  );
   return (
-    <div>
-      <Button onClick={() => setOpen(true)}>Click me</Button>
-      <Drawer open={open} anchor={"left"} onClose={() => setOpen(false)}>
-        {list()}
-      </Drawer>
+    <div className="sidebar">
+      <h3>Laguna Om</h3>
+      <img
+        src="https://cancunactivo.com.mx/wp-content/uploads/2019/11/laguna-om.jpg"
+        alt="laguna"
+        width="250px"
+        height="200px"
+      />
+      <ButtonSidebar>Localización y delimitación del proyecto</ButtonSidebar>
+      <ButtonSidebar>Índices de vegetación</ButtonSidebar>
+      <ButtonSidebar>Concentración de carbono</ButtonSidebar>
+      <ButtonSidebar>Ubicación de flora y fauna</ButtonSidebar>
+      <ButtonSidebar>Localidades beneficiadas</ButtonSidebar>
     </div>
   );
 }
