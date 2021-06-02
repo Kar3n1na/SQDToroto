@@ -1,3 +1,4 @@
+import { render } from "@testing-library/react";
 import React from "react";
 import ReactMapGL, { Source, Layer } from "react-map-gl";
 import adp from "./Data/LagunaOm/ADP.geojson";
@@ -41,7 +42,7 @@ export const layers = {
       source: "FF",
       layout: {},
       paint: {
-        "circle-radius": 1,
+        "circle-radius": 2,
         "circle-color": "rgb(128, 0, 0)",
       },
     },
@@ -53,7 +54,7 @@ export const layers = {
       source: "LB",
       layout: {},
       paint: {
-        "circle-radius": 1,
+        "circle-radius": 2,
         "circle-color": "rgb(0, 0, 0)",
       },
     },
@@ -72,7 +73,7 @@ export const layers = {
   ],
 };
 function LagunaOm() {
-  var number = localStorage.getItem("number");
+  var number = localStorage.getItem('number')
   const [layer, setLayer] = React.useState(number);
   const [viewport, setViewport] = React.useState({
     longitude: -89.15095099588774,
@@ -80,7 +81,7 @@ function LagunaOm() {
     zoom: 9,
   });
   function renderLayer(item) {
-    localStorage.setItem("number", item);
+    localStorage.setItem('number', item)
     window.location.reload();
   }
   function ShowLayer() {
@@ -99,7 +100,9 @@ function LagunaOm() {
           onViewportChange={setViewport}
         >
           <Source id="my-data" type="geojson" data={(adp, cv, ff, lb, tcc)}>
-            {layer ? <Layer {...layers.features[layer]} /> : null}
+            {
+              layer ? <Layer {...layers.features[layer]} /> : null
+            }
           </Source>
         </ReactMapGL>
       </div>

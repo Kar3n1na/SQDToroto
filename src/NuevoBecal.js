@@ -42,7 +42,7 @@ export const layers = {
       source: "FF",
       layout: {},
       paint: {
-        "circle-radius": 1,
+        "circle-radius": 2,
         "circle-color": "rgb(128, 0, 0)",
       },
     },
@@ -54,7 +54,7 @@ export const layers = {
       source: "LB",
       layout: {},
       paint: {
-        "circle-radius": 1,
+        "circle-radius": 2,
         "circle-color": "rgb(0, 0, 0)",
       },
     },
